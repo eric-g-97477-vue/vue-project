@@ -11,8 +11,8 @@ defineProps({
 
 const me = ref(null);
 const isVisible = useElementVisibility(me);
-watch(me, () => {
-  console.log("visibilityUpdated");
+watch(me, (newValue, oldValue) => {
+  console.log("visibilityUpdated", newValue, oldValue);
 });
 </script>
 
