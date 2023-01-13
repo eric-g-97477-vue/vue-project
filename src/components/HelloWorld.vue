@@ -11,14 +11,13 @@ defineProps({
 
 const me = ref(null);
 const isVisible = useElementVisibility(me);
-
-watch(me, (old, nw) => {
+watch(me, () => {
   console.log("visibilityUpdated");
 });
 </script>
 
 <template>
-  <div class="greetings">
+  <div ref="me" class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
       You’ve successfully created a project with
